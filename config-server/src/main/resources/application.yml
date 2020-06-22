@@ -1,0 +1,21 @@
+server:
+  port: 93
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          #配置github
+          uri: https://github.com/liuchongyang0909/liuchongyang-springcloud
+          #配置搜索目录
+          search-paths:
+            - configfiles
+          default-label: master
+      #配置分支
+      label: spring-cloud-config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
